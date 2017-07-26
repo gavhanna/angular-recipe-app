@@ -1,4 +1,5 @@
 {
+  "tslint.autoFixOnSave": true,
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
