@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
+  navbarIsIn = false;
+
   constructor(private dataStorageService: DataStorageService,
     private authService: AuthService,
     private router: Router) {}
@@ -30,5 +32,10 @@ export class HeaderComponent {
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  toggleNavbar() {
+    let isIn = this.navbarIsIn;
+    this.navbarIsIn = isIn === false ? true : false;
   }
 }
