@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import * as firebase from 'firebase';
 import { AuthService } from 'app/auth/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from 'app/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   loadedFeature = 'recipe';
 
   constructor(private authService: AuthService) {}
@@ -18,15 +18,21 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const authUser = Object.keys(window.localStorage).filter(item => {
-      return item.startsWith('firebase:authUser')
-    });
 
     firebase.initializeApp({
       apiKey: 'AIzaSyDWjowDrw_BtYxCmKWnu5av92V1KYBplxg',
       authDomain: 'ng-recipe-f8761.firebaseapp.com',
     });
 
-    this.authService.token = authUser[0];
+    // const authUser = Object.keys(window.localStorage).filter(item => {
+    //   return item.startsWith('firebase:authUser')
+    // });
+    // this.authService.token = authUser[0];
+    // console.log(Object.keys(window.localStorage).filter(item => {
+    //   return item.startsWith('firebase:authUser')
+    // })[0]);
+  }
+
+  ngOnDestroy() {
   }
 }

@@ -13,7 +13,7 @@ export class HeaderComponent {
   navbarIsIn = false;
 
   constructor(private dataStorageService: DataStorageService,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router) {}
 
   onSaveData() {
