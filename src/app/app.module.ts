@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { RecipeService } from 'app/recipes/recipe.service';
 import { DataStorageService } from 'app/shared/data-storage.service';
@@ -13,13 +12,11 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ShoppingListService } from 'app/shopping-list/shopping-list.service';
 import { ShoppingListModule } from 'app/shopping-list/shopping-list.module';
 import { AuthModule } from 'app/auth/auth.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from 'app/core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     SharedModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    CoreModule
   ],
   providers: [
     ShoppingListService,
