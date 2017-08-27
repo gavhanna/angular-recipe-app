@@ -1,3 +1,6 @@
+# Link to live version
+http://ng-retsept.s3-website-eu-west-1.amazonaws.com/
+
 # Recipe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
